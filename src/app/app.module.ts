@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GameComponent } from './setup/game/game.component';
 import { StorypointComponent } from './setup/storypoint/storypoint.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameComponent,
-    StorypointComponent
+    StorypointComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
