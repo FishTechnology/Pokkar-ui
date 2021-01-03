@@ -1,0 +1,13 @@
+<div fxLayout="row wrap">
+    <div fxFlex="20%">
+        <mat-selection-list  [multiple]="false">
+            <mat-list-option  [routerLink]="['/setup/game']" >
+             Game
+            </mat-list-option>
+            <mat-list-option  [routerLink]="['/setup/storypoint']" >
+                Story Point
+              </mat-list-option>
+          </mat-selection-list>
+    </div>
+    <div fxFlex="80%" class="maincontent"><router-outlet></router-outlet></div>
+</div>

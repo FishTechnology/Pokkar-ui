@@ -1,1 +1,28 @@
-<p>storypoint works!</p>
+<div>
+    <mat-card> 
+        <mat-card-title>Checkbox configuration</mat-card-title>
+        <mat-card-content>
+            <div fxLayout="row" fxLayoutGap="20px">
+                <mat-form-field class="example-form-field">
+                    <mat-label>Story point</mat-label>
+                    <input matInput type="text" [(ngModel)]="newPoint">
+                    <button mat-button *ngIf="newPoint" matSuffix mat-icon-button aria-label="Clear" (click)="newPoint=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button color="primary" (click)="addStoryPoint()">Add</button>
+                </div>
+            </div>   
+            <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+                <mat-grid-list cols="4" rowHeight="100px">
+                    <mat-grid-tile
+                        *ngFor="let storyPoint of storyPointModel"
+                        {{storyPoint.point}}>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
