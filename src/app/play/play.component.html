@@ -1,0 +1,33 @@
+<div>
+  <mat-toolbar>
+    <span class="row-spacer"></span>
+    <section>
+      <div class="but-row">
+        <button mat-raised-button color="primary" (click)="showCard()" [disabled]="showLoading">Show</button>
+        <button mat-raised-button color="warn" (click)="resetCard()">Clear</button>
+      </div>
+    </section>
+  </mat-toolbar>
+</div>
+<div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+  <div fxFlex="15" class="sec1" fxFlex.xs="55">first-section</div>
+  <div fxFlex="65" class="sec2">
+    <div fxLayout="row wrap" fxLayoutWrap fxLayoutGap="20px" fxLayoutAlign="start start">
+      <mat-card class="card-player" *ngFor="let player of playersDetail.players">
+        <mat-card-header fxLayoutAlign="center">
+          <mat-card-title>
+            <span> {{ player.name }}</span>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content fxLayoutAlign="center" class="card-content">
+          <div class="card">
+            <div class="front mat-display-2" *ngIf="!player.point">?</div>
+            <mat-icon aria-hidden="false" class="front" aria-label="tick icon" *ngIf="player.point">check_circle</mat-icon>
+            <div class="back mat-display-2">{{ player.point | formatPoint }}</div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div fxFlex="20" class="sec3" fxFlex.xs="15">third-section</div>
+</div>

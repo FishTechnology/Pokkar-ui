@@ -10,7 +10,7 @@ export class StoryPointService {
   constructor() {}
 
   async getStoryPoint(userId: number): Promise<StoryPointModel[]> {
-    const resposne = await axios.get<StoryPointModel[]>(environment.pokkar_bff_url + "pokkarproxy/games/storypoint?userid=" + userId);
+    const resposne = await axios.get<StoryPointModel[]>(environment.pokkar_bff_url + "pokkarproxy/storypoints?userid=" + userId);
     return resposne.data;
   }
 }

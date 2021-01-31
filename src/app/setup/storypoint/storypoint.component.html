@@ -14,11 +14,14 @@
                     <button mat-raised-button color="primary" (click)="addStoryPoint()">Add</button>
                 </div>
             </div>   
-            <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
-                <mat-grid-list cols="4" rowHeight="100px">
+
+            <div style="width: 50%;">               
+                <mat-grid-list cols="4" rowHeight="90px" >
                     <mat-grid-tile
-                        *ngFor="let storyPoint of storyPointModel"
-                        {{storyPoint.point}}>
+                        *ngFor="let storyPoint of storyPointModel">
+                        <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                            {{storyPoint.point}}
+                        </button>                      
                     </mat-grid-tile>
                 </mat-grid-list>
             </div>

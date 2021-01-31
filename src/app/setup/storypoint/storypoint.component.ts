@@ -15,6 +15,7 @@ export class StorypointComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.storyPointModel = await this.storyPointService.getStoryPoint(1);
+    var nname = "test";
   }
 
   addStoryPoint() {
