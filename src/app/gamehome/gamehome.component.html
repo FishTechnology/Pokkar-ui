@@ -1,0 +1,38 @@
+<div>
+  <div fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="center start">
+    <mat-card>
+      <mat-card-title>
+        <span> New Game </span>
+      </mat-card-title>
+      <mat-card-content> </mat-card-content>
+      <mat-action-list>
+        <form name="newGameForm" [formGroup]="newGameForm">
+          <mat-form-field class="margin-right-20 full-width">
+            <mat-label>Player Name</mat-label>
+            <input matInput placeholder="name" [formControl]="playerName" autocomplete="off" appearance="fill" required />
+            <button mat-button *ngIf="playerName" matSuffix mat-icon-button aria-label="Clear" (click)="playerName = ''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="startGame()">Start</button>
+        </form>
+      </mat-action-list>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>
+        <span> Join Game </span>
+      </mat-card-title>
+      <mat-card-content> </mat-card-content>
+      <mat-action-list>
+        <mat-form-field class="margin-right-20 full-width">
+          <mat-label>Game id</mat-label>
+          <input matInput placeholder="id" [formControl]="sessionId" autocomplete="off" appearance="fill" required />
+          <button mat-button *ngIf="sessionId" matSuffix mat-icon-button aria-label="Clear" (click)="sessionId = ''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="joinGame()">Join</button>
+      </mat-action-list>
+    </mat-card>
+  </div>
+</div>
